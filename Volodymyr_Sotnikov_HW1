@@ -1,0 +1,32 @@
+#include <cmath>
+#include <iostream>
+
+int main() {
+  long a, b, c, x1, x2;
+
+  std::cout << "ax2+bx+c=0" << std::endl;
+
+  std::cout << "a=?" << std::endl;
+  std::cin >> a;
+  std::cout << "b=?" << std::endl;
+  std::cin >> b;
+  std::cout << "c=?" << std::endl;
+  std::cin >> c;
+
+  if (((b * b) - 4 * a * c) > 0) {
+
+    x1 = (-1 * b + sqrt(b * b - 4 * a * c)) / (2 * a);
+    x2 = (-1 * b - sqrt(b * b - 4 * a * c)) / (2 * a);
+    std::cout << "x1=" << x1 << std::endl;
+    std::cout << "x2=" << x2 << std::endl;
+
+  } else if (((b * b) - 4 * a * c) == 0) {
+    int z;
+    z = (-1 * b) / (2 * a);
+    std::cout << "x=" << z << std::endl;
+  } else {
+    std::cout << "Error" << std::endl;
+  }
+
+  return 0;
+}
