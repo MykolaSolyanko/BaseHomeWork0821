@@ -5,8 +5,8 @@ int main() {
 
   bool RunProgramm{true};
 
-  // Infinitive cycle. At the end of the cycle user can choose to calculate
-  // another equation or to exit.
+  // Infinitive cycle.
+  // At the end of the cycle user can choose to calculate another equation or to exit.
   while (RunProgramm) {
 
     std::cout << "\n-- Solving a quadratic equation ax^2 + bx + c = 0 --\n"
@@ -14,8 +14,8 @@ int main() {
 
     int a{};
 
-    // Get [a] koef from user. Check [a] koef to be in range. If it's out of
-    // range circle repeat.
+    // Get [a] koef from user. Check [a] koef to be in range.
+    // If it's out of range circle repeat.
     do {
 
       std::cout << "Enter number [a] in range (-255...1; 1...255): ";
@@ -30,8 +30,8 @@ int main() {
 
     int b{};
 
-    // Get [b] koef from user. Check [b] koef to be in range. If it's out of
-    // range circle repeat.
+    // Get [b] koef from user. Check [b] koef to be in range.
+    // If it's out of range circle repeat.
     do {
 
       std::cout << "Enter number [b] in range (-255...255): ";
@@ -46,8 +46,8 @@ int main() {
 
     int c{};
 
-    // Get [c] koef from user. Check [c] koef to be in range. If it's out of
-    // range circle repeat.
+    // Get [c] koef from user. Check [c] koef to be in range.
+    // If it's out of range circle repeat.
     do {
 
       std::cout << "Enter number [c] in range (-255...255): ";
@@ -89,8 +89,8 @@ int main() {
 
     long long int CheckNumber{};
 
-    // Check if user enter correct input. Is must be 1 or 0. If it's another
-    // nomber circle repeat.
+    // Check if user enter correct input. Is must be 1 or 0.
+    // If it's another number circle repeat.
     do {
 
       std::cout << "1 - Continue; 0 - Exit" << std::endl;
