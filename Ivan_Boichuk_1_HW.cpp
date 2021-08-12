@@ -6,7 +6,7 @@
 int main() {
 
   constexpr int errorExitCode{-1};
-  constexpr int successExitCode{};
+  constexpr int successExitCode{0};
 
   int lowRangeA{2};
   int highRangeA{255};
