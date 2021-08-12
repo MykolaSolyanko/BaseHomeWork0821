@@ -1,0 +1,57 @@
+#include <cmath>
+#include <iostream>
+
+constexpr int ktwo{2};
+constexpr int kfour{4};
+
+int main() {
+
+  constexpr int kmin_a{1};
+  constexpr int kmax_a{6};
+
+  constexpr int kmin_b{-20};
+  constexpr int kmax_b{9};
+
+  constexpr int kmin_c{-5};
+  constexpr int kmax_c{8};
+
+  int a;
+  std::cout << "Please input a value between " << kmin_a << " and " << kmax_a
+            << std::endl;
+  std::cin >> a;
+  if (a < kmin_a || a > kmax_a) {
+    return -1; // error
+  }
+
+  int b;
+  std::cout << "Please input b value between " << kmin_b << " and " << kmax_b
+            << std::endl;
+  std::cin >> b;
+  if (b < kmin_b || b > kmax_b) {
+    return -1; // error
+  }
+
+  int c;
+  std::cout << "Please input c value between " << kmin_c << " and " << kmax_c
+            << std::endl;
+  std::cin >> c;
+  if (c < kmin_c || c > kmax_c) {
+    return -1; // error
+  }
+
+  long long D{(b * b) - (kfour * a * c)};
+
+  std::cout << D << std::endl;
+
+  if (D <= 0.0l) {
+    return -1; // error
+  }
+
+  auto x1{((-1 * b) + sqrt(D)) / (ktwo * a)};
+  auto x2{((-1 * b) - sqrt(D)) / (ktwo * a)};
+
+  std::cout << x1 << std::endl;
+  std::cout << x2 << std::endl;
+
+  return 0;
+}
