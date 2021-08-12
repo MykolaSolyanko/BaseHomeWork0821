@@ -50,7 +50,7 @@ int main() {
     return errorExitCode;
   }
 
-  long long D{static_cast<long long>(b * b) -
+  const long long D{static_cast<long long>(b * b) -
               (static_cast<long long>(4) * a * c)};
 
   constexpr auto noRootErrorText{"The equation has no real roots.\n"};
