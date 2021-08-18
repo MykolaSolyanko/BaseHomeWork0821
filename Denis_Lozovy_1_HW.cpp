@@ -44,7 +44,8 @@ int main() {
 
   if (D >= 0) {
     auto x1{-b + (D / 2 * a)};
-    auto x2{-b - (D / 2 * a)};
+    auto x2{-b - (D / (2 * a))};
+
 
     if (x1 == x2) {
       std::cout << "x1 = " << x1;
