@@ -37,8 +37,8 @@ int main() {
             << " = 0\n";
 
   long long D{(b * b) - (4 * a * c)};
-  long long discriminant{};
-  discriminant = std::sqrt(static_cast<__int64>(D));
+ const auto discriminant  { std::sqrt(D) };
+
   auto x1();
   auto x2();
 
