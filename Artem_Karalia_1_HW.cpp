@@ -18,7 +18,7 @@ int main() {
               << "]\n";
     std::cin >> a;
 
-    if (a >= kLowARange and a <= kHighARange) {
+    if ((a > kLowARange && a < kHighARange) && (a != 0)) {
       std::cout << "a = " << a << std::endl;
       break;
     }
@@ -32,7 +32,7 @@ int main() {
               << "]\n";
     std::cin >> b;
 
-    if (b >= kLowBRange and b <= kHighBRange) {
+    if (b > kLowBRange && b < kHighBRange) {
       std::cout << "b = " << b << std::endl;
       break;
     }
@@ -46,40 +46,39 @@ int main() {
               << "]\n";
     std::cin >> c;
 
-    if (c >= kLowCRange and c <= kHighCRange) {
+    if (c > kLowCRange && c < kHighCRange) {
       std::cout << "c = " << c << std::endl;
       break;
     }
     std::cout << "Invalid data, please enter coef c again\n";
   }
 
-  // long long D{};
+  constexpr int kSuccessExit{0};
+  constexpr int kErrorExit{-1};
+
   constexpr int kDConst{4};
   constexpr int kXConst{2};
 
-  long long D{(b * b) - (kDConst * a * c)};
-  std::cout << "D = " << D << std::endl;
+  const long long D = {(b * b) - (kDConst * a * c)};
 
   if (D < 0) {
-    std::cout << "no solution" << std::endl;
-    return (0);
+    std::cout << "D = " << D << std::endl;
+    return kErrorExit;
   }
 
   if (D == 0) {
     std::cout << "x = "
-              << " " << -b / (kXConst * a) << std::endl;
-    return (0);
+              << " " << -b / (static_cast<double>(kXConst) * a) << std::endl;
+    return kSuccessExit;
   }
 
   if (D > 0) {
 
-    std::cout << "x1 =" << (-b + sqrt(static_cast<double>(D)) / kXConst * a)
-              << std::endl;
-    std::cout << "x2 =" << (-b - sqrt(static_cast<double>(D)) / kXConst * a)
-              << std::endl;
-    return (0);
+    std::cout << "x1 =" << ((-b + sqrt(D)) / (kXConst * a)) << std::endl;
+    std::cout << "x2 =" << ((-b - sqrt(D)) / (kXConst * a)) << std::endl;
+    return kSuccessExit;
   }
 
   std::cout << "unexpected error" << std::endl;
-  return (-1);
+  return kErrorExit;
 }
